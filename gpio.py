@@ -15,18 +15,38 @@ mode = GPIO.getmode()# returns which board using in Raspberry
 # 10 if GPIO.setmode(GPIO.BOARD) is active
 ############################################################
 # enable/ disable warning
-GPIO.setwarnings(False)
+GPIO.setwarnings(True)
 ############################################################
 # Setting up the chanel, data direction in assemply
-GPIO.setup(channel, GPIO.IN)
+GPIO.setup(21, GPIO.OUT)
+GPIO.setup(40,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 ############################################################
-GPIO.setup(7, GPIO.OUT)
+timer = 0.1
 print(str(mode) + ' is used.')
-
+# GPIO.wait_for_edge(40, GPIO.RISING)
+############################################################
+# chan_list = [11,12]                             # also works with tuples
+# GPIO.output(chan_list, GPIO.LOW)                # sets all to GPIO.LOW
+# GPIO.output(chan_list, (GPIO.HIGH, GPIO.LOW))   # sets first HIGH and second LOW
+############################################################
+print(GPIO.RPI_REVISION)
 # loop through 50 times, on/off for 1 second
-for i in range(50):
-    GPIO.output(7,True)
-    time.sleep(1)
-    GPIO.output(7,False)
-    time.sleep(1)
+while True:
+    #block execution of your program until an edge is detected
+    GPIO.wait_for_edge(40, GPIO.RISING)
+    # print(GPIO.PUD_DOWN)
+    # if GPIO.input(40):
+    #     print('Input was HIGH')
+    # else:
+    #     print('Input was LOW')
+    GPIO.output(21,True)
+    time.sleep(0.11)
+    GPIO.output(21,False)
+    time.sleep(0.23)
+    GPIO.output(21, True)
+    time.sleep(0.11)
+    GPIO.output(21, False)
+    time.sleep(0.55)
+    # if not GPIO.input(40):
+    #     break
 GPIO.cleanup()
