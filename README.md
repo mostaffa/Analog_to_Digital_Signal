@@ -1,5 +1,5 @@
 # Analog_to_Digital_Signal
-Receive an analog signal, convert it to digital, to be handled with micro controllers ARM processors using <a href="https://cdn-shop.adafruit.com/datasheets/MCP3008.pdf" target="_blank"><strong>MCP3008</strong></a> IC.
+Receive an analog signal, convert it to digital, to be handled with micro controllers ARM processors using [MCP3008](https://cdn-shop.adafruit.com/datasheets/MCP3008.pdf)  IC.
 <p>Using Raspberry Pi4 and nodejs and python</p>
 <p>Connect the MCP3008 pins to Raspberry pi in this order:</p>
 
