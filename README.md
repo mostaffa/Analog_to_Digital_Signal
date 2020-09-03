@@ -1,6 +1,17 @@
 # Analog_to_Digital_Signal
 Receive an analog signal, convert it to digital, to be handled with micro controllers ARM processors using <a href="https://cdn-shop.adafruit.com/datasheets/MCP3008.pdf" target="_blank"><strong>MCP3008</strong></a> IC.
-
+<p>Using Raspberry Pi4 and nodejs and python</p>
+<p>Connect the MCP3008 pins to Raspberry pi in this order:</p>
+<ol>
+    <li>MCP3008 (VDD)  =======> Raspberry (3.3v)</li>
+    <li>MCP3008 (Vref) =======> Raspberry (3.3v)</li>
+    <li>MCP3008 (AGND) =======> Raspberry (GND)</li>
+    <li>MCP3008 (CLK)  =======> Raspberry PIN23(SCLK)</li>
+    <li>MCP3008 (Dout) =======> Raspberry PIN21(MISO)</li>
+    <li>MCP3008 (Din)  =======> Raspberry PIN19(MOSI)</li>
+    <li>MCP3008 (CS/SHDN) ====> Raspberry PIN22(CE0)</li>
+    <li>MCP3008 (DGND) =======> Raspberry (GND)</li>
+</ol>
 <pre>
          ____
   CH0 __|    |__VDD
